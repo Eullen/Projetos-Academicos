@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc
+	http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+	http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-4.3.xsd	
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+		http://www.springframework.org/schema/tx
+	http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+<!-- 	pacote base da APLICAÇÃO -->
+	<context:component-scan base-package="br.senai.todolist" />
+<!-- 	Indicar trabalho com anotações "@" -->
+	<mvc:annotation-driven />
+<!-- Aponta biblioteca de DataSource - GErencia conexão com o BD -->
+	<bean id="mysqlDataSource" class="org.apache.commons.dbcp2.BasicDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+<!-- 		endereço DB e propriedades de autenticação no gerenciador de BD -->
+		<property name="url" value="jdbc:mysql://localhost:3306/todolist" />
+		<property name="username" value="root" />
+		<property name="password" value="root" />
+	</bean>
+<!-- Responsável por criar EntityManagers - -->
+	<bean id="entityManagerFactory"
+		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="dataSource" ref="mysqlDataSource" />
+<!-- 		QUAL IMPLEMENTACAO DE jpa APP USA -->
+		<property name="jpaVendorAdapter">
+			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" />
+		</property>
+	</bean>
+
+<!-- GERENCIADOR DE TRANSACOES - COMMIT, OPEN, ROOLBACK POR CONTA DO SPRING -->
+	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="entityManagerFactory" />
+	</bean>
+	
+	<mvc:interceptors>
+		<bean class="br.senai.todolist.interceptor.JwtInterceptor"></bean>
+	</mvc:interceptors>
+
+
+
+<!-- TRANSACOES SERAO INDICADAS POR ANOTACOES -->
+	<tx:annotation-driven />
+</beans>
