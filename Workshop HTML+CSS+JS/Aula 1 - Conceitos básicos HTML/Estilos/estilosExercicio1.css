@@ -1,0 +1,25 @@
+/*editando estilos*/
+div {
+	width: 75px;
+	height: 75px;
+	border: 1px solid #000;/*tamanho da borda - tipo - cor*/
+
+}
+/*dentro de circulo que tem div*/
+#circulos div{
+	border-radius: 	50%;/* arredonda bordas*/
+}
+
+.vermelho{
+	background-color: red;
+}
+
+.amarelo{
+	background-color: yellow;
+}
+.verde{
+	background-color: green;
+}
+h1{
+	text-transform: uppercase;
+}

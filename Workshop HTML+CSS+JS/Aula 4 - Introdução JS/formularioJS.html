@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>
+		Formulário de Login 
+	</title>
+	<link rel="stylesheet" href="Styles/formStyle.css"">
+</head>
+<body>
+
+	<H1> Formulário de Cadastro</H1>
+	<form name="formLogin" method="post" action="">
+		<!-- Borda que agrupa  -->
+		<fieldset>
+			<!-- COloca titulo no formulário -->
+			<legend> Login </legend>
+			<div>
+				<!-- label for usado para acessibilidade - ao clicar no text direciona na caixa de texto -->
+				<label for="username">Username: </label>
+				<input type="text" placeholder="USERNAME" name="username" id="username">
+				<span> </span>
+			</div>
+			<div>
+				<!-- label for usado para acessibilidade - ao clicar no text direciona na caixa de texto -->
+				<label for="password">Password: </label>
+				<input type="password" placeholder="PASSWORD" name="password" id="password" >
+				<span> </span>
+			</div>
+			<div >
+				<button type="submit" name="letMeIn"> Let me in!</button>
+			</div>
+		</fieldset>
+	</form>
+
+	<script>
+
+		var loginForm = document.formLogin;
+		var btnLogin = document.formLogin.letMeIn;
+		btnLogin.onclick = function(event){ //event = evento sendo executado
+			//Cancelando refresh automático
+			event.preventDefault(); //Não executa nada após; Cancelando o submit nesse caso; 
+
+			//limpando spans
+			var spans = document.querySelectorAll("span");
+			spans.forEach(function (span){
+				//chamando função para limpar spans
+				span.innerHTML = '';
+			});
+
+
+			var userName = loginForm.username;
+			//validando preenchimento do campo username
+			if (!userName.value){ //verifica se username NÃO é: false, undefined,null ou ""
+				//pegando span
+				var parent = userName.parentElement; //pega o pai do elemento
+				var children = parent.children; //pega todos o  filhos do pai e coloca no array
+				var span = children[2]; //acessando a posição 2 para pegar span
+				span.innerHTML = 'Preencha o campo username corretamente';
+				return;
+
+			}
+
+			//validando preenchimento do campo password
+			var password = loginForm.password;
+			//validando preenchimento do campo username
+			if (!password.value){ //verifica se username NÃO é: false, undefined,null ou ""
+				//pegando span
+				var parent = password.parentElement; //pega o pai do elemento
+				var children = parent.children; //pega todos o  filhos do pai e coloca no array
+				var span = children[2]; //acessando a posição 2 para pegar span
+				span.innerHTML = 'Preencha o campo password corretamente';
+				return;
+			}
+
+			if(password.value.length>18 || password.value.length<6){
+				
+				spans[1].innerHTML = "Invalid Password. Size need be between 6 and 18";
+				return;
+			}
+
+			loginForm.submit(); //enviando dados depois de validar
+		}
+
+	</script>
+
+</body>
+</html>

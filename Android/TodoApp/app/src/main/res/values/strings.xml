@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">TodoApp</string>
+    <string name="titulo_do_todo">Título do Todo</string>
+    <string name="x">X</string>
+    <string name="lista_de_itens">Lista de Itens</string>
+    <string name="titulo">Título</string>
+    <string name="lista_a_fazer">Lista a Fazer</string>
+    <string name="name">Name</string>
+    <string name="t_tulo">Título</string>
+    <string name="salvar">Salvar</string>
+    <string name="descricao">Descrição dos Itens</string>
+</resources>

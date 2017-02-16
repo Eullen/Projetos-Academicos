@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>	
+
+	</title>
+</head>
+<body>
+	<form name="formContador" method="post" action=""> 
+		<!-- input tem de estar dentro de tag form -->
+		<input type="text" name="contador">
+	</form>
+		<span id="contador"></span>
+	<script>
+	// só funciona com forms
+		var contadorInput = document.formContador.contador;	
+		// adc evento ao contadorInput
+		contadorInput.onkeypress = function(){
+			//evento que ocorre quando user digita no campo
+			//span tem id, logo posso usar query selector
+			var contadorText = document.querySelector("#contador");
+			contadorText.innerHTML = 1 + this.value.length + " Caracteres."; //coloca no span quantidade caracteres digitados dentro do input
+		}
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="br.senai.sp.informatica.todoapp.MainActivity"
+    tools:ignore="MissingConstraints">
+
+    <TabHost
+        android:id="@+id/tab_host"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.46"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+               <include layout="@layout/afazer_layout"
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent" />
+
+               <include layout="@layout/concluidos_layout"
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent" />
+
+            </FrameLayout>
+        </LinearLayout>
+    </TabHost>
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        app:fabSize="mini"
+        app:srcCompat="@android:drawable/ic_input_add"
+        android:id="@+id/bt_adicionar"
+        app:layout_constraintRight_toRightOf="@+id/tab_host"
+        app:layout_constraintBottom_toBottomOf="@+id/tab_host"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="16dp"
+        app:elevation="6dp" />
+
+
+</android.support.constraint.ConstraintLayout>

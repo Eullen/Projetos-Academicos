@@ -1,0 +1,23 @@
+$botoes: (class:"default",bgColor:#3f51b5),
+		(class:"sucess",bgColor:#2e7d32),
+		(class:"cancel",bgColor:#b71c1c);
+
+
+/*gerando função*/
+@mixin gerarBotoes($listaBotoes){
+	/*para cada botao na lista de botoes*/
+	@each $botao in $listaBotoes{
+		/*percorreno lista*/
+		.btn-#{map-get($botao,class)}{
+			background: #{map-get($botao,bgColor)};
+			color:#fff;
+			padding: 15px 25px;
+			border:none;
+			width:100% - 80%;
+		}
+	}
+}
+
+
+/*chamando funcao*/
+@include gerarBotoes($botoes);

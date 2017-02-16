@@ -1,0 +1,25 @@
+/*funções em CSS*/
+@mixin alerts($textColor,$bgcolor){
+	/*alterando valores para todo mundo que tiver essas variáveis*/
+	background: $bgcolor;
+	color:$textColor;
+}
+
+.alert{
+	width: 80vw;
+	padding: 20px 30px;
+	font-weight: bold;
+
+}
+
+.alert-danger{
+	/*	exportando css padrão*/
+	@extend .alert;
+	/*alterando color e backgournd*/
+	@include alerts(#000, #F44336);
+}
+
+.alert-sucess{
+	@extend .alert;
+	@include alerts("#fff",#009688);
+}

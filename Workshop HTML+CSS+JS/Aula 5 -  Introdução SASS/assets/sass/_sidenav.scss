@@ -1,0 +1,135 @@
+
+//cores
+$backgroundSideNav:#fff;
+$roxo:#673AB7;
+$hoverMenu:#d9d9d9;
+$closeButton:#ff0;
+$MaxPercent:100%;
+
+
+
+/*aside*/
+#sidenav{
+        width: 400px;
+        position: fixed;
+        top:0;
+        left: -410px;
+        height: 100vh;
+        /*CSS MATIC - GERAR SOMBRAS EM ITEM*/
+        box-shadow: 5px 0px 20px 2px rgba(0,0,0,0.3);
+        z-index: 1;
+        background:$backgroundSideNav;
+        transition: .2s;
+
+     &.ativo{
+        transition: left 0.2s linear;
+        /*vai ficar visivel novamente*/
+        left: 0;
+    }  
+    nav {
+
+        width: $MaxPercent;
+
+        #sidenavHeader{
+            width: $MaxPercent;
+            background: $roxo;
+            text-align: center;
+            color:#fff;
+            padding: 25px 0px;
+
+            figure{
+                margin-top:40px;
+                img{    
+                    width: 150px;
+                    height: 150px;
+                    border-radius: 50%;
+                }
+            }
+            /*botão  de fechar */
+            #close{
+                background:transparent;
+                border: none;
+                color: $backgroundSideNav;
+                font-size: 24px;
+                /*colocando botão no canto superior*/
+                position: absolute;
+                top:20px;
+                right: 20px;
+                /**pseudo seletor*/
+                &:hover{
+                    /*mouse */
+                    cursor: pointer;
+                    color:$closeButton;
+                }
+            }
+        }
+
+        a{
+            text-decoration: none;
+        }
+
+        ul{
+            list-style: none;
+        }
+
+        img{
+            max-width: $MaxPercent;
+        }
+
+        
+        
+
+                /*menu*/
+        #sidenavMenu{
+            background: $backgroundSideNav;
+            /*barra de rolagem*/
+            overflow-y:auto; 
+            height: $MaxPercent;
+            ul{
+                height: $MaxPercent;
+                li{
+                    width: $MaxPercent;
+                    a{
+                        padding: 15px 25px;
+                        width: $MaxPercent;
+                        /*display block - ninguém fica do lado*/
+                        display: block;
+                        &:hover{
+                            background-color:$hoverMenu;
+                        }
+                    }
+                }
+            }  
+        }
+
+        /*rodapé*/
+        #sidenavFooter{
+            position: absolute;
+            bottom: 0;
+            background:$roxo;
+            width: $MaxPercent;
+            padding: 15px 25px;
+        }
+
+    }
+}
+
+/*ovelay*/
+#overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background:rgba(0,0,0,.7);
+    z-index: -1;
+    opacity: 0;
+    /*transição - que elementos - tempo - tipo de transição*/
+    transition: opacity 0.2s linear;
+
+    /*overlay ativo deve fiar visivel*/
+    &.ativo{
+        opacity: 1;
+    }
+
+}

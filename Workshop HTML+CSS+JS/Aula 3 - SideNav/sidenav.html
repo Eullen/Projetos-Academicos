@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Sidenav</title>
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+	<!-- /importação de font -->
+	<link rel="stylesheet" href="Styles/sidenav.css">
+</head>
+<body>
+<button id="animar"> ANIMA AÍ</button>
+<aside id="sidenav">
+	<nav>	
+		<header id="sidenavHeader">
+				<button id="close"> X </button>
+				<!-- figure permita agrupar imagens e  -->
+				<figure>
+					<img src="images/profile.jpg" alt="PROFILE PICTURE">
+					<figcaption>Eullen Silva</figcaption>
+				</figure>
+		</header>
+		<!-- conteúdo do menu -->
+		<main id="sidenavMenu">
+			<ul>
+				<li>
+					<a href="#">Item 1</a>
+				</li>
+				<li>
+					<a href="#">Item 2</a>
+				</li>
+				<li>
+					<a href="#">Item 3</a>
+				</li>
+				<li>
+					<a href="#">Item 4</a>
+				</li>
+			</ul>
+		</main>
+		<!-- fim do conteúdo do menu -->
+		<footer id="sidenavFooter">
+			&copy; Todos os direitos reservados ao SENAI SP!
+		</footer>
+	</nav>
+</aside>
+<div id="overlay"></div>
+<!-- script -->
+<script type="text/javascript">
+	 //quanto a tela que estou carregar 
+	window.onload = function(){
+		// mostrando menu
+		//documento. seletor ("#id do item").evento = função que quero que realize 
+		document.querySelector('#animar').onclick = function(){
+			document.querySelector('#sidenav').classList.add('ativo');
+			document.querySelector('#overlay').classList.add('ativo');
+		}
+		// fechando menu
+		document.querySelector('#close').onclick = function(){
+			document.querySelector('#sidenav').classList.remove('ativo');
+			document.querySelector('#overlay').classList.remove('ativo');
+		}
+	};
+</script>
+</body>
+</html>

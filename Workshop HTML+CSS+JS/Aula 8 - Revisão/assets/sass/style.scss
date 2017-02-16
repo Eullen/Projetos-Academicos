@@ -1,0 +1,27 @@
+.box {
+    >img{
+        width: 150px;
+        height:150px;
+        object-fit:scale-down; 
+      }
+    &.animada{
+        position: absolute;
+        top:0px;
+        animation: rightMove 3s ease-in-out 0s;//alternate-reverse;
+     }
+
+   }
+/*# sourceMappingURL=style.css.map */
+
+@keyframes rightMove{
+  from{
+    left:0;
+    background:lightcoral;
+    border-radius: 30%;
+  }
+  to{
+    background: cornflowerblue;
+    left: calc(100% - 150px);
+    border-radius: 50%;
+  }
+}

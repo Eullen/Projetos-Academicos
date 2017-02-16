@@ -1,0 +1,149 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  /*zerar bordas*/
+  box-sizing: border-box; }
+
+/*gerais*/
+body {
+  font-family: 'Roboto', sans-serif; }
+
+/*aside*/
+#sidenav {
+  width: 400px;
+  position: fixed;
+  top: 0;
+  left: -410px;
+  height: 100vh;
+  /*CSS MATIC - GERAR SOMBRAS EM ITEM*/
+  box-shadow: 5px 0px 20px 2px rgba(0, 0, 0, 0.3);
+  z-index: 1;
+  background: #fff;
+  transition: .2s; }
+  #sidenav.ativo {
+    transition: left 0.2s linear;
+    /*vai ficar visivel novamente*/
+    left: 0; }
+  #sidenav nav {
+    width: 100%;
+    /*menu*/
+    /*rodap├®*/ }
+    #sidenav nav #sidenavHeader {
+      width: 100%;
+      background: #673AB7;
+      text-align: center;
+      color: #fff;
+      padding: 25px 0px;
+      /*bot├úo  de fechar */ }
+      #sidenav nav #sidenavHeader figure {
+        margin-top: 40px; }
+        #sidenav nav #sidenavHeader figure img {
+          width: 150px;
+          height: 150px;
+          border-radius: 50%; }
+      #sidenav nav #sidenavHeader #close {
+        background: transparent;
+        border: none;
+        color: #fff;
+        font-size: 24px;
+        /*colocando bot├úo no canto superior*/
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        /**pseudo seletor*/ }
+        #sidenav nav #sidenavHeader #close:hover {
+          /*mouse */
+          cursor: pointer;
+          color: #ff0; }
+    #sidenav nav a {
+      text-decoration: none; }
+    #sidenav nav ul {
+      list-style: none; }
+    #sidenav nav img {
+      max-width: 100%; }
+    #sidenav nav #sidenavMenu {
+      background: #fff;
+      /*barra de rolagem*/
+      overflow-y: auto;
+      height: 100%; }
+      #sidenav nav #sidenavMenu ul {
+        height: 100%; }
+        #sidenav nav #sidenavMenu ul li {
+          width: 100%; }
+          #sidenav nav #sidenavMenu ul li a {
+            padding: 15px 25px;
+            width: 100%;
+            /*display block - ningu├®m fica do lado*/
+            display: block; }
+            #sidenav nav #sidenavMenu ul li a:hover {
+              background-color: #d9d9d9; }
+    #sidenav nav #sidenavFooter {
+      position: absolute;
+      bottom: 0;
+      background: #673AB7;
+      width: 100%;
+      padding: 15px 25px; }
+
+/*ovelay*/
+#overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: -1;
+  opacity: 0;
+  /*transi├º├úo - que elementos - tempo - tipo de transi├º├úo*/
+  transition: opacity 0.2s linear;
+  /*overlay ativo deve fiar visivel*/ }
+  #overlay.ativo {
+    opacity: 1; }
+
+/*fun├º├Áes em CSS*/
+.alert, .alert-danger, .alert-sucess {
+  width: 80vw;
+  padding: 20px 30px;
+  font-weight: bold; }
+
+.alert-danger {
+  /*	exportando css padr├úo*/
+  /*alterando color e backgournd*/
+  /*alterando valores para todo mundo que tiver essas vari├íveis*/
+  background: #F44336;
+  color: #000; }
+
+.alert-sucess {
+  /*alterando valores para todo mundo que tiver essas vari├íveis*/
+  background: #009688;
+  color: "#fff"; }
+
+/*gerando fun├º├úo*/
+/*chamando funcao*/
+/*para cada botao na lista de botoes*/
+/*percorreno lista*/
+.btn-default {
+  background: #3f51b5;
+  color: #fff;
+  padding: 15px 25px;
+  border: none;
+  width: 20%; }
+
+/*percorreno lista*/
+.btn-sucess {
+  background: #2e7d32;
+  color: #fff;
+  padding: 15px 25px;
+  border: none;
+  width: 20%; }
+
+/*percorreno lista*/
+.btn-cancel {
+  background: #b71c1c;
+  color: #fff;
+  padding: 15px 25px;
+  border: none;
+  width: 20%; }
+
+/*# sourceMappingURL=main.css.map */

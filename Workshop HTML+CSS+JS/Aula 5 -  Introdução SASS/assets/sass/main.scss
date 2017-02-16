@@ -1,0 +1,15 @@
+*{
+	margin: 0;
+	padding: 0;
+	/*zerar bordas*/
+	box-sizing: border-box;
+}
+
+/*gerais*/
+body{
+    font-family:'Roboto', sans-serif;	
+}
+
+@import './_sidenav.scss';
+@import './_alerts.scss';
+@import './_botao.scss';

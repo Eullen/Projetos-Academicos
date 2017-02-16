@@ -1,0 +1,164 @@
+/*Todas os elementos incorporam */
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+/*Todos os elementos do tipo texto apenas */
+body{
+	font-family: 'Roboto',sans-serif;
+}
+.sidenav{
+	/*ocultar*/
+	display: none;
+}
+
+main{
+	/*VW e HW é mais reponsivo*/
+	width: 100vw;
+	height: 100vh;
+}
+
+img {
+	/*Navegador redimensiona proporcionalmente*/
+	width: 100%;	
+}
+/*colocar elemento que limpa*/
+.clear{
+	clear: both;
+}
+.header-fixo{
+	background-color: #90CAF9;
+	padding: 15px 25px; 
+	color:#fff;
+	position: fixed;
+	width: 100%;
+}
+
+.header-fixo h3{
+	float: left;
+}
+.header-fixo button {
+	float: right;
+	display: none;
+}
+.conteudo{
+	padding: 70px 10px;
+	width: 75vw;
+	/*margem automatica dos lados*/
+	margin: 0 auto;
+}
+.conteudo h2{
+	color:#90CAF9;
+}
+
+.introducao{
+}
+
+.introducao h2{
+	margin-bottom: 35px;
+}
+.introducao img{
+	width: 100%;
+	margin-bottom: 25px;
+}
+p{
+	font-size: 22px;
+	line-height: 30px;
+}
+
+ul{
+	list-style: none;
+}
+/*contents*/
+	.contents{
+		margin: 30px 0 ;
+		padding-left: 30px;
+		border-left: 5px solid #90CAF9;
+	}
+
+	.contents h4{
+		font-weight: 300;
+		color: gray;
+	}
+
+	.contents a{
+		color:#90CAF9;
+		text-decoration: none;
+		font-weight: 800;
+		font-size: 22px;
+	}
+
+.contents li{
+	padding-top: 10px;
+}
+
+/*goals style*/
+	.goals div{
+		margin-top: 30px;
+	}
+	.goals p{
+		width: 40%;
+		font-size: 14px; 
+		float:left;
+	}
+	.goals img{
+		width: 55%;
+		float:right;
+		height: 350px;
+
+	}
+
+/*HR*/
+	hr {
+		margin: 45px 0px;	 
+	}
+
+/*colunas principles*/
+
+	.principles h2{
+		margin:25px 0px;
+	}
+	.coluna{
+		width: 30%;
+		/*usado pensando em reposividade - se não couber na linha ele joga pra baixo*/
+		display:inline-block;
+		float:left;
+		margin:0px 1%;
+
+	}
+
+	/*pseudo seletor*/
+	/*altera apenas as div do meio*/
+	.coluna:nth-child(3n){
+		margin-left: 25px;
+		margin-right: 25px;
+	}
+	/*altera apenas ultima coluna*/
+	.coluna:last-child{
+		float-right;
+	}
+
+	.coluna h4{
+		padding: 20px 0px;
+	}
+
+	.coluna p{
+		font-size: 12px; 
+		padding: 20px 0px; 
+		color: gray;
+	}
+
+/*footer*/
+	footer{
+		width: 100%;
+		clear: both;
+		background-color: #90CAF9;
+		padding: 15px 25px; 
+	}
+
+	footer a{
+		text-decoration: none;
+		color:#fff;
+		float: right;
+	}

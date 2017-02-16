@@ -1,0 +1,47 @@
+/* seletor/tag { propriedade : valor; }*/
+/*comentário = ctrl + ;*/
+
+body{
+	background: #45aeff; 
+	text-align: center;
+	font-family: arial;
+}
+
+h1{
+	color: #fff;
+	font-size: 48px;
+}
+/*tags separadas por virgula assumem mesmo conportamento de estillização*/
+h1,
+p {
+	font-weight: 800;
+}
+
+span{
+	background: yellow;
+}
+/*espaço separando seletores indica hierarquia*/
+p span{
+	background: #cc46d1;
+	color:#fffccc;
+}
+/*.nome da classe - tem de ser igual ao html*/
+.destaque{
+	background-color: #f0f;
+}
+/*Somente o h1 que seja destaque. quando espaça indica relação pai e filho*/
+h1.destaque{
+	color:#000;
+}
+
+.paragrafo-bonitao{
+	margin-top: 70px;
+}
+/*seletor contem as duas classes*/
+.destaque.paragrafo-bonitao{
+	font-weight: 300;
+}
+
+#subtitulo {
+	color:#35df5a;
+}

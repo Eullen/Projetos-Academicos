@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>
+		
+	</title>
+</head>
+<body>
+
+	<button id="btnAlertar"> Alertar </button>
+
+<!-- Padrão é colocar tag script mais em baixo -->
+	<script>
+		//método - document.getElementByID('btnAlertar');
+		//Ou 
+		var botaoAlertar = document.querySelector('#btnAlertar'); //seleciona elemento ado html com base nos seletores css -  noexemplo por id(#)
+		//Para "tipar" variável basta atribuir valores a elas
+		botaoAlertar.onclick = function(){
+			//Aqui vai função que botão realiza
+			alert('Alguém clicou no botão!');	
+		};
+
+
+	</script>
+
+
+</body>
+</html>
